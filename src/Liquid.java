@@ -7,19 +7,41 @@ public class Liquid {
     int[] p5=new int[2];
     int[] p6=new int[2];
 
-    public Liquid(int x1,int y1,int x2,int y2,int x3,int y3,int x4,int y4,int x5,int y5,int x6,int y6) {
-        this.p1[0] = x1;
-        this.p1[1] = y1;
-        this.p2[0] = x2;
-        this.p2[1] = y2;
-        this.p3[0] = x3;
-        this.p3[1] = y3;
-        this.p4[0] = x4;
-        this.p4[1] = y4;
-        this.p5[0] = x5;
-        this.p5[1] = y5;
-        this.p6[0] = x6;
-        this.p6[1] = y6;
+    int mouthWidth = 30;
+    int bodyHeight = 150;
+    int mouthHeight = (bodyHeight / 2) * 3;
+
+    int startX=0;
+    int startY=0;
+
+    public Liquid(int startX, int startY, int mouthwidth,int bodyHeight) {
+
+        this.bodyHeight=bodyHeight;
+        this.mouthWidth=mouthwidth;
+        this.mouthHeight=(bodyHeight / 2) * 3;
+
+        this.startX=startX;
+        this.startY=startY;
+
+/*        startX,startY+mouthHeight,
+                startX,startY+mouthHeight,
+                startX - mouthWidth * 2,startY + mouthHeight + bodyHeight,
+                startX + mouthWidth * 3,startY + mouthHeight + bodyHeight,
+                startX + mouthWidth,startY + mouthHeight,
+                startX + mouthWidth,startY+mouthHeight);*/
+
+        this.p1[0] = startX - mouthWidth * 2;
+        this.p1[1] = startY + mouthHeight + bodyHeight;
+        this.p2[0] = startX - mouthWidth * 2;
+        this.p2[1] = startY + mouthHeight + bodyHeight;
+        this.p3[0] = startX - mouthWidth * 2;
+        this.p3[1] = startY + mouthHeight + bodyHeight;
+        this.p4[0] = startX + mouthWidth * 3;
+        this.p4[1] = startY + mouthHeight + bodyHeight;
+        this.p5[0] = startX + mouthWidth * 3;
+        this.p5[1] = startY + mouthHeight + bodyHeight;
+        this.p6[0] = startX + mouthWidth * 3;
+        this.p6[1] = startY + mouthHeight + bodyHeight;
 
     }
 

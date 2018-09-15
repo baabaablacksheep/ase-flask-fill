@@ -31,7 +31,7 @@ public class Panels implements ActionListener {
         drainButton.addActionListener(this);
         infoTextFilled.setVisible(false);
 
-        window.setSize(400,600);
+        window.setSize(500,800);
         window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
         window.setVisible(true);
     }
