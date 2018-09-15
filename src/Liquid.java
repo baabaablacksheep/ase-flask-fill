@@ -23,8 +23,11 @@ public class Liquid {
 
     }
 
-    public int[] getP1() {
-        return p1;
+    public int getP1(int index) {
+        if(index==0){
+            return p1[0];
+        }
+        return p1[1];
     }
 
     public void setP1(int x,int y) {
@@ -32,8 +35,11 @@ public class Liquid {
         this.p1[1] = y;
     }
 
-    public int[] getP2() {
-        return p2;
+    public int getP2(int index) {
+        if(index==0){
+            return p2[0];
+        }
+        return p2[1];
     }
 
     public void setP2(int x,int y) {
@@ -41,8 +47,11 @@ public class Liquid {
         this.p2[1] = y;
     }
 
-    public int[] getP3() {
-        return p3;
+    public int getP3(int index) {
+        if(index==0){
+            return p3[0];
+        }
+        return p3[1];
     }
 
     public void setP3(int x,int y) {
@@ -50,8 +59,11 @@ public class Liquid {
         this.p3[1] = y;
     }
 
-    public int[] getP4() {
-        return p4;
+    public int getP4(int index) {
+        if(index==0){
+            return p4[0];
+        }
+        return p4[1];
     }
 
     public void setP4(int x,int y) {
@@ -59,8 +71,11 @@ public class Liquid {
         this.p4[1] = y;
     }
 
-    public int[] getP5() {
-        return p5;
+    public int getP5(int index) {
+        if(index==0){
+            return p5[0];
+        }
+        return p5[1];
     }
 
     public void setP5(int x,int y) {
@@ -68,8 +83,11 @@ public class Liquid {
         this.p5[1] = y;
     }
 
-    public int[] getP6() {
-        return p6;
+    public int getP6(int index) {
+        if(index==0){
+            return p6[0];
+        }
+        return p6[1];
     }
 
     public void setP6(int x,int y) {

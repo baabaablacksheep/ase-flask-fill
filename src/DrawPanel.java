@@ -11,7 +11,8 @@ public class DrawPanel extends JPanel implements ActionListener {
     int bodyHeight = 150;
     int mouthHeight = (bodyHeight / 2) * 3;
 
-    int startX = getWidth(), startY = 30;
+    int startX=100;
+    int startY=20;
 
     int velX=5,velY=5;
 
@@ -25,7 +26,7 @@ public class DrawPanel extends JPanel implements ActionListener {
     public boolean filled=false;
     public boolean isEmpty=true;
 
-    Liquid currentLiquid=new Liquid(
+    Liquid cl=new Liquid(
             startX,startY+mouthHeight,
             startX,startY+mouthHeight,
             startX - mouthWidth * 2,startY + mouthHeight + bodyHeight,
@@ -35,7 +36,7 @@ public class DrawPanel extends JPanel implements ActionListener {
 
     LiquidTemp currentLiquidTemp =new LiquidTemp(200,400,50,100);
 
-    Timer timer;
+    static Timer timer;
 
     Image ballImage;
     Ball currentBall=new Ball();
@@ -50,6 +51,8 @@ public class DrawPanel extends JPanel implements ActionListener {
             System.out.println("Error Occurred Wile Loading The Image!");
         }
 
+        this.startX=100;
+        this.startY=10;
 
         prepareImage(ballImage, this);
         currentBall.setX(10);
@@ -57,12 +60,17 @@ public class DrawPanel extends JPanel implements ActionListener {
         setDoubleBuffered(true);
 
 
-        new Timer(2,this).start();
+        timer=new Timer(10,this);
+        timer.start();
+
 
     }
 
     public void startTimer(){
-        timer.start();
+        new Timer(10,this).start();
+    }
+    public void stopTimer(){
+        new Timer(10,this).stop();
     }
 
     void drawFlask(Graphics g) {
@@ -83,14 +91,14 @@ public class DrawPanel extends JPanel implements ActionListener {
 //        int startX = (getWidth() - (mouthWidth / 2), startY = 30;
 
         // draw GeneralPath (polyline)
-        int x2Points[] = {startX, startX, startX - mouthWidth * 2, startX + mouthWidth * 3, startX + mouthWidth, startX + mouthWidth};
-        int y2Points[] = {startY, startY + mouthHeight, startY + mouthHeight + bodyHeight, startY + mouthHeight + bodyHeight, startY + mouthHeight, startY};
-        GeneralPath polygon = new GeneralPath(GeneralPath.WIND_EVEN_ODD, x2Points.length);
+        int xPoints[] = {startX, startX, startX - mouthWidth * 2, startX + mouthWidth * 3, startX + mouthWidth, startX + mouthWidth};
+        int yPoints[] = {startY, startY + mouthHeight, startY + mouthHeight + bodyHeight, startY + mouthHeight + bodyHeight, startY + mouthHeight, startY};
+        GeneralPath polygon = new GeneralPath(GeneralPath.WIND_EVEN_ODD, xPoints.length);
 
-        polygon.moveTo(x2Points[0], y2Points[0]);
+        polygon.moveTo(xPoints[0], yPoints[0]);
 
-        for (int index = 1; index < x2Points.length; index++) {
-            polygon.lineTo(x2Points[index], y2Points[index]);
+        for (int index = 1; index < xPoints.length; index++) {
+            polygon.lineTo(xPoints[index], yPoints[index]);
         }
         polygon.closePath();
         g2d.draw(polygon);
@@ -119,8 +127,8 @@ public class DrawPanel extends JPanel implements ActionListener {
         Graphics2D g2d=(Graphics2D) g;
 
         // draw GeneralPath (polyline)
-        int xPoints[] = {startX, startX, startX - mouthWidth * 2, startX + mouthWidth * 3, startX + mouthWidth, startX + mouthWidth};
-        int yPoints[] = {startY, startY + mouthHeight, startY + mouthHeight + bodyHeight, startY + mouthHeight + bodyHeight, startY + mouthHeight, startY};
+        int xPoints[] = {cl.getP1(0), cl.getP2(0), cl.getP3(0),cl.getP4(0),cl.getP5(0),cl.getP6(0)};
+        int yPoints[] = {cl.getP1(1), cl.getP2(1), cl.getP3(1),cl.getP4(1),cl.getP5(1),cl.getP6(1)};
         GeneralPath liquidShape = new GeneralPath(GeneralPath.WIND_EVEN_ODD, xPoints.length);
 
         liquidShape.moveTo(xPoints[0], yPoints[0]);
@@ -167,12 +175,35 @@ public class DrawPanel extends JPanel implements ActionListener {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //drawFlask(g);
-        drawLiquid2(g);
-//        drawLiquid3(g);
+        //drawLiquid2(g);
+        drawLiquid3(g);
 
     }
-
     @Override
+    public void actionPerformed(ActionEvent e){
+
+
+        int p1x= cl.getP1(0);
+        int p1y= cl.getP1(1);
+        int p2x= cl.getP2(0);
+        int p2y= cl.getP2(1);
+        int p3x= cl.getP3(0);
+        int p3y= cl.getP3(1);
+        int p4x= cl.getP4(0);
+        int p4y= cl.getP4(1);
+        int p5x= cl.getP5(0);
+        int p5y= cl.getP5(1);
+        int p6x= cl.getP6(0);
+        int p6y= cl.getP6(1);
+
+        int liguidHeight=p1y-p3y;
+
+        cl.setP1(p1x,p1y-liquidFillRate);
+        cl.setP6(p6x,p6y-liquidFillRate);
+        repaint();
+    }
+
+/*    @Override
     public void actionPerformed(ActionEvent e){
 
         int currentHeight= currentLiquidTemp.getHeight();
@@ -192,7 +223,7 @@ public class DrawPanel extends JPanel implements ActionListener {
         currentLiquidTemp.setCodY(currentLiquidTemp.getCodY()-liquidFillRate);
         currentLiquidTemp.setHeight(currentLiquidTemp.getHeight()+liquidFillRate);
         repaint();
-    }
+    }*/
 
 /*    @Override
     public void actionPerformed(ActionEvent e) {

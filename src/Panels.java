@@ -44,6 +44,8 @@ public class Panels implements ActionListener {
             panel_01.setBackground(Color.LIGHT_GRAY);
             panel_02.setBackground(Color.LIGHT_GRAY);
 
+            item.startTimer();
+
         }
         else{
             infoTextFilled.setVisible(false);
