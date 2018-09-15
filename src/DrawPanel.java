@@ -26,7 +26,7 @@ public class DrawPanel extends JPanel implements ActionListener {
 
         setDoubleBuffered(true);
 
-        timer = new Timer(80, this);
+        timer = new Timer(40, this);
         timer.start();
 
     }
@@ -61,7 +61,7 @@ public class DrawPanel extends JPanel implements ActionListener {
         g2d.draw(liquidShape);
         Toolkit.getDefaultToolkit().sync();
 
-        g2d.setColor(new Color(203, 19, 14));
+        g2d.setColor(new Color(34, 32, 166));
         g2d.fill(liquidShape);
 
         g.dispose();

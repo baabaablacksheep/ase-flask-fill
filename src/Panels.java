@@ -12,8 +12,6 @@ public class Panels implements ActionListener {
     JLabel infoTextFilled=new JLabel("Container Filled!");
     JLabel infoTextDrained=new JLabel("Container Emptied!");
 
-    DrawPanel item=new DrawPanel();
-
     Panels(){
         panel_01.setBackground(Color.CYAN);
         panel_02.setBackground(Color.DARK_GRAY);
@@ -43,8 +41,6 @@ public class Panels implements ActionListener {
             infoTextDrained.setVisible(false);
             panel_01.setBackground(Color.LIGHT_GRAY);
             panel_02.setBackground(Color.LIGHT_GRAY);
-
-            item.startTimer();
 
         }
         else{
