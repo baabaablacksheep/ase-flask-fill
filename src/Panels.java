@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class Panels implements ActionListener {
     JFrame window= new JFrame("Multiple Panels");
-    JPanel panel_01=new DrawPanel();
+    DrawPanel panel_01=new DrawPanel();
     JPanel panel_02=new JPanel();
     JButton fillButton =new JButton("Fill");
     JButton drainButton=new JButton("Drain");
@@ -25,7 +25,12 @@ public class Panels implements ActionListener {
         window.add(panel_01,BorderLayout.CENTER);
         window.add(panel_02,BorderLayout.PAGE_END);
 
-        fillButton.addActionListener(this);
+        fillButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                panel_01.buttonClick(true);
+            }
+        });
         drainButton.addActionListener(this);
         infoTextFilled.setVisible(false);
 

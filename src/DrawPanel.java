@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.GeneralPath;
 
-public class DrawPanel extends JPanel implements ActionListener {
+public class DrawPanel extends JPanel {
 
 
     int mouthWidth = 30;
@@ -26,9 +26,17 @@ public class DrawPanel extends JPanel implements ActionListener {
 
         setDoubleBuffered(true);
 
-        timer = new Timer(40, this);
-        timer.start();
 
+    }
+
+    public void  buttonClick(boolean isFill){
+        Timer timer = new Timer(40, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                performDraw();
+            }
+        });
+        timer.start();
     }
 
     void drawFlask(Graphics g) {
@@ -74,8 +82,7 @@ public class DrawPanel extends JPanel implements ActionListener {
         drawLiquid(g);
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
+    public void performDraw(){
 
 
         int p1x = cl.getP1(0);
@@ -98,7 +105,7 @@ public class DrawPanel extends JPanel implements ActionListener {
 
         if (liquidHeight > bodyHeight + mouthHeight) {
             liquidFillRate = -2;
-        } else if (liquidHeight < 0) {
+        } else if (liquidHeight <= 0) {
             liquidFillRate = 2;
         }
 
