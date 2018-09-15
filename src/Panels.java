@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class Panels implements ActionListener {
     JFrame window= new JFrame("Multiple Panels");
@@ -25,13 +27,59 @@ public class Panels implements ActionListener {
         window.add(panel_01,BorderLayout.CENTER);
         window.add(panel_02,BorderLayout.PAGE_END);
 
-        fillButton.addActionListener(new ActionListener() {
+        fillButton.addMouseListener(new MouseListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                panel_01.buttonClick(true);
+            public void mouseClicked(MouseEvent e) {
+                //panel_01.startFill(true);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                panel_01.startFill(true);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                panel_01.stopFill(false);
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+
+        });
+        drainButton.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                panel_01.startDrain(true);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                panel_01.stopDrain(true);
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
             }
         });
-        drainButton.addActionListener(this);
         infoTextFilled.setVisible(false);
 
         window.setSize(500,800);

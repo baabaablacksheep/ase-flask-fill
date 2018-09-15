@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.GeneralPath;
 
-public class DrawPanel extends JPanel {
+public class DrawPanel extends JPanel{
 
 
     int mouthWidth = 30;
@@ -14,10 +14,24 @@ public class DrawPanel extends JPanel {
     int startX = 100;
     int startY = 20;
 
+    boolean isFill=false;
+
+    Timer fillTimer = new Timer(40, new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            performFill();
+        }
+    });
+
+    Timer drainTimer = new Timer(40, new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            performDrain();
+        }
+    });
+
     public int liquidFillRate = 2;
     Liquid cl = new Liquid(100, 70, 50, 200);
-
-    Timer timer;
 
     DrawPanel() {
 
@@ -28,16 +42,34 @@ public class DrawPanel extends JPanel {
 
 
     }
+    public void startFill(boolean isFill) {
+        this.isFill=isFill;
+        fillTimer.start();
+    }
+    public void stopFill(boolean isFill){
+        this.isFill=isFill;
+        fillTimer.stop();
+    }
+    public void startDrain(boolean isFill){
+        this.isFill=isFill;
+        drainTimer.start();
+    }
+    public void stopDrain(boolean isFill){
+        this.isFill=isFill;
+        drainTimer.stop();
+    }
 
-    public void  buttonClick(boolean isFill){
-        Timer timer = new Timer(40, new ActionListener() {
+
+
+/*    public void  startFill(boolean isFill){
+        fillTimer = new Timer(40, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                performDraw();
+                performFill();
             }
         });
-        timer.start();
-    }
+        fillTimer.start();
+    }*/
 
     void drawFlask(Graphics g) {
 
@@ -82,8 +114,7 @@ public class DrawPanel extends JPanel {
         drawLiquid(g);
     }
 
-    public void performDraw(){
-
+    public void performFill(){
 
         int p1x = cl.getP1(0);
         int p1y = cl.getP1(1);
@@ -103,14 +134,11 @@ public class DrawPanel extends JPanel {
 
         int tempAngleRate = 1;
 
+        liquidFillRate = 2;
+
         if (liquidHeight > bodyHeight + mouthHeight) {
-            liquidFillRate = -2;
-        } else if (liquidHeight <= 0) {
-            liquidFillRate = 2;
+            liquidFillRate = 0;
         }
-
-        if (liquidFillRate > 0) {
-
 
             if (cl.getP2(0) < cl.getP5(0) - mouthWidth) {
                 cl.setP1(p1x + tempAngleRate, p1y - liquidFillRate);
@@ -121,18 +149,45 @@ public class DrawPanel extends JPanel {
                 cl.setP1(p1x, p1y - liquidFillRate);
                 cl.setP6(p6x, p6y - liquidFillRate);
             }
-        }
-        else{
 
-            if (cl.getP1(1)==cl.getP2(1)) {
-                cl.setP1(p1x - tempAngleRate, p1y - liquidFillRate);
-                cl.setP2(p2x - tempAngleRate, p2y - liquidFillRate);
-                cl.setP5(p5x + tempAngleRate, p5y - liquidFillRate);
-                cl.setP6(p6x + tempAngleRate, p6y - liquidFillRate);
-            } else {
-                cl.setP1(p1x, p1y - liquidFillRate);
-                cl.setP6(p6x, p6y - liquidFillRate);
-            }
+        repaint();
+    }
+
+    public void performDrain(){
+
+        int p1x = cl.getP1(0);
+        int p1y = cl.getP1(1);
+        int p2x = cl.getP2(0);
+        int p2y = cl.getP2(1);
+        int p3x = cl.getP3(0);
+        int p3y = cl.getP3(1);
+        int p4x = cl.getP4(0);
+        int p4y = cl.getP4(1);
+        int p5x = cl.getP5(0);
+        int p5y = cl.getP5(1);
+        int p6x = cl.getP6(0);
+        int p6y = cl.getP6(1);
+
+        int liquidHeight = p3y - p1y;
+        int bodyHeight = p3y - p2y;
+
+        int tempAngleRate = 1;
+
+        liquidFillRate = -2;
+
+        if (liquidHeight <= 0) {
+            liquidFillRate = 0;
+        }
+
+        if(cl.getP1(1)<cl.getP2(1)) {
+            cl.setP1(p1x, p1y - liquidFillRate);
+            cl.setP6(p6x, p6y - liquidFillRate);
+        }
+        else if(cl.getP2(1)<cl.getP3(1)){
+            cl.setP1(p1x - tempAngleRate, p1y - liquidFillRate);
+            cl.setP2(p2x - tempAngleRate, p2y - liquidFillRate);
+            cl.setP5(p5x + tempAngleRate, p5y - liquidFillRate);
+            cl.setP6(p6x + tempAngleRate, p6y - liquidFillRate);
         }
 
         repaint();
