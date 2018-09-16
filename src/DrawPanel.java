@@ -228,7 +228,7 @@ public class DrawPanel extends JPanel{
         //int bodyHeight = p3y - p2y;
 
         int tempAngleRate = 1;
-        liquidFillRate = -2;
+        liquidFillRate = 2;
 
         if (liquidHeight <= 0) {
             liquidFillRate = 0;
@@ -241,10 +241,11 @@ public class DrawPanel extends JPanel{
 //            cl.setP6(p6x, p6y - liquidFillRate);
         }
         else if(liquid.p2.getCordY()<liquid.p3.getCordY()){
+
             liquid.p1.setCordX(liquid.p1.getCordX()-tempAngleRate);
             liquid.p1.setCordY(liquid.p1.getCordY()+liquidFillRate);
-            liquid.p2.setCordX(liquid.p1.getCordX()-tempAngleRate);
-            liquid.p2.setCordY(liquid.p1.getCordY()+liquidFillRate);
+            liquid.p2.setCordX(liquid.p2.getCordX()-tempAngleRate);
+            liquid.p2.setCordY(liquid.p2.getCordY()+liquidFillRate);
 
             liquid.p5.setCordX(liquid.p5.getCordX()+tempAngleRate);
             liquid.p5.setCordY(liquid.p5.getCordY()+liquidFillRate);

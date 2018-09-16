@@ -7,22 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48730403-9e29-4d7f-a221-29c38666778b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Container.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ContainerSuper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Flask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LiquidOld.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PointSuper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Flask-Fill-Example2/Demo.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Flask-Fill-Example2/DrawPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Flask-Fill-Example2/DrawPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Flask-Fill-Example2/Liquid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Flask-Fill-Example2/Liquid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Flask-Fill-Example2/Panels.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Flask-Fill-Example2/Panels.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Liquid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Liquid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panels.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,12 +48,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="20" />
-          <entry key="java" value="10077" />
+          <entry key="java" value="10109" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="10077" />
+          <entry key="JAVA" value="10109" />
           <entry key="PLAIN_TEXT" value="20" />
         </counts>
       </usages-collector>
@@ -78,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DrawPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="168" column="30" lean-forward="true" selection-start-line="168" selection-start-column="30" selection-end-line="168" selection-end-column="30" />
+            <state relative-caret-position="415">
+              <caret line="245" column="67" lean-forward="true" selection-start-line="245" selection-start-column="67" selection-end-line="245" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -159,7 +146,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537121077722" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537122485384" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -457,8 +444,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DrawPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="168" column="30" lean-forward="true" selection-start-line="168" selection-start-column="30" selection-end-line="168" selection-end-column="30" />
+        <state relative-caret-position="415">
+          <caret line="245" column="67" lean-forward="true" selection-start-line="245" selection-start-column="67" selection-end-line="245" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
