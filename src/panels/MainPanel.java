@@ -5,17 +5,17 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class Panels {
+public class MainPanel {
 
-    private JFrame window= new JFrame("Multiple panels.Panels");
+    private JFrame window= new JFrame("Multiple panels.MainPanel");
     CenterPanel panel_01= new CenterPanel();
     JPanel panel_02=new JPanel();
     JButton fillButton =new JButton("Fill");
     JButton drainButton=new JButton("Drain");
 
-    private static Panels panelObj;
+    private static MainPanel panelObj;
 
-    private Panels(){
+    private MainPanel(){
         panel_01.setBackground(Color.CYAN);
         panel_02.setBackground(Color.DARK_GRAY);
 
@@ -73,12 +73,12 @@ public class Panels {
         window.setVisible(true);
     }
 
-    public static Panels getPanel(){
+    public static MainPanel getPanel(){
 
         if (panelObj == null) {
-            synchronized (Panels.class) {
+            synchronized (MainPanel.class) {
                 if (panelObj == null) {
-                    panelObj = new Panels();//instance will be created at request time
+                    panelObj = new MainPanel();//instance will be created at request time
                 }
             }
         }

@@ -2,36 +2,19 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Flask-Fill-Example2:jar" />
+      <artifact name="Flask-Fill-App:jar" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48730403-9e29-4d7f-a221-29c38666778b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/action/LiquidDrain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/action/LiquidFill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/liquid/LiquidShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/liquid/LiquidTexture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/panels/CenterPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stroke/FlaskStroke.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stroke/IStroke.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stroke/IStrokeFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stroke/LiquidStroke.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stroke/StrokeFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stroke/StrokeType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Flask_Fill_App_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Flask_Fill_Example2_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Flask-Fill-Example2/DrawPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Flask-Fill-Example2/Liquid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Flask-Fill-Example2/Panels.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/flask/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ContainerSuper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/flask/ContainerSuper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DrawPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Flask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/flask/Flask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Liquid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/liquid/Liquid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LiquidOld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flask-Fill-Example2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Flask-Fill-App.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Panels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/panels/Panels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cordinate/point/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PointSuper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cordinate/point/PointSuper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/panels/CenterPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/panels/CenterPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/panels/Panels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/panels/MainPanel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,7 +37,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="MF" value="1" />
+          <entry key="MF" value="2" />
           <entry key="java" value="85" />
           <entry key="jpg" value="1" />
           <entry key="png" value="1" />
@@ -64,19 +47,19 @@
         <counts>
           <entry key="Image" value="2" />
           <entry key="JAVA" value="85" />
-          <entry key="Manifest" value="1" />
+          <entry key="Manifest" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="31" />
-          <entry key="java" value="12940" />
+          <entry key="dummy" value="41" />
+          <entry key="java" value="12943" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="12940" />
-          <entry key="PLAIN_TEXT" value="31" />
+          <entry key="JAVA" value="12943" />
+          <entry key="PLAIN_TEXT" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -84,11 +67,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/panels/CenterPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="420">
+              <caret line="28" column="37" lean-forward="true" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#startAction#0;class#DrawPanel#0" />
@@ -99,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/panels/Panels.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/panels/MainPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+            <state relative-caret-position="-135">
+              <caret line="24" column="49" lean-forward="true" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1302#1303#0" expanded="true" />
@@ -176,12 +159,13 @@
         <option value="$PROJECT_DIR$/src/liquid/LiquidShape.java" />
         <option value="$PROJECT_DIR$/src/liquid/LiquidTexture.java" />
         <option value="$PROJECT_DIR$/src/panels/DrawPanel.java" />
-        <option value="$PROJECT_DIR$/src/panels/CenterPanel.java" />
         <option value="$PROJECT_DIR$/src/panels/Panels.java" />
+        <option value="$PROJECT_DIR$/src/panels/MainPanel.java" />
+        <option value="$PROJECT_DIR$/src/panels/CenterPanel.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="243" />
     <option name="y" value="24" />
     <option name="width" value="1835" />
@@ -205,6 +189,24 @@
             <path>
               <item name="Flask-Fill-Example2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Flask-Fill-Example2" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Flask-Fill-Example2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Flask-Fill-Example2" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Flask-Fill-Example2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Flask-Fill-Example2" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="Flask_Fill_App_jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Flask-Fill-Example2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Flask-Fill-Example2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -221,7 +223,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537137182665" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537138301929" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -254,7 +256,54 @@
   <component name="RunManager">
     <configuration name="MainDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainDemo" />
-      <module name="Flask-Fill-Example2" />
+      <module name="Flask-Fill-App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="Flask-Fill-App" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="Flask-Fill-App" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -387,13 +436,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LiquidTemp.java" />
     <entry file="file://$PROJECT_DIR$/src/Ball.java" />
-    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/liquid_texture.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -578,23 +620,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/panels/CenterPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#startAction#0;class#DrawPanel#0" />
-            <element signature="method#drawLiquid#0;class#DrawPanel#0" />
-            <element signature="method#paintComponent#0;class#DrawPanel#0" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/panels/Panels.java">
+    <entry file="file://$PROJECT_DIR$/src/panels/MainPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        <state relative-caret-position="-135">
+          <caret line="24" column="49" lean-forward="true" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1302#1303#0" expanded="true" />
@@ -609,13 +645,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/panels/CenterPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="37" lean-forward="true" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#startAction#0;class#DrawPanel#0" />
+            <element signature="method#drawLiquid#0;class#DrawPanel#0" />
+            <element signature="method#paintComponent#0;class#DrawPanel#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>Flask-Fill-Example2:jar</last-edited>
+          <last-edited>Flask-Fill-App:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -663,7 +712,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Flask-Fill-Example2</last-edited>
+          <last-edited>Flask-Fill-App</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

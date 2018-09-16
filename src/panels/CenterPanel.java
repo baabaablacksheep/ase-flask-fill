@@ -24,7 +24,7 @@ public class CenterPanel extends JPanel {
 
     public final int angleRate = 1;
     public final int liquidFillRate = 2;
-    private final int timerDelay = 40;
+    private final int timerDelay = 5;
 
     private boolean isFilling = true;
 

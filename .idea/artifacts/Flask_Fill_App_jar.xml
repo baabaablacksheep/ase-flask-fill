@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Flask-Fill-App:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Flask_Fill_App_jar</output-path>
+    <root id="archive" name="Flask-Fill-App.jar">
+      <element id="module-output" name="Flask-Fill-App" />
+    </root>
+  </artifact>
+</component>
