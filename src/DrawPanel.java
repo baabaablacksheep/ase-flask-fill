@@ -1,14 +1,16 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.geom.GeneralPath;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class DrawPanel extends JPanel{
 
 
     int mouthWidth = 30;
-    int bodyHeight = 150;
+    int bodyHeight = 220;
     int mouthHeight = (bodyHeight / 2) * 3;
 
     int startX = 100;
@@ -16,19 +18,12 @@ public class DrawPanel extends JPanel{
 
     boolean isFill=false;
 
-    Timer fillTimer = new Timer(40, new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            performFill();
-        }
-    });
+    BufferedImage liquidImg;
+    TexturePaint liquidTexture;
 
-    Timer drainTimer = new Timer(40, new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            performDrain();
-        }
-    });
+    Timer fillTimer = new Timer(40, e -> performFill());
+
+    Timer drainTimer = new Timer(40, e -> performDrain());
 
     public int liquidFillRate = 2;
     Liquid cl = new Liquid(100, 70, 50, 200);
@@ -39,6 +34,8 @@ public class DrawPanel extends JPanel{
         this.startY = 10;
 
         setDoubleBuffered(true);
+
+        loadImages();
 
 
     }
@@ -58,28 +55,50 @@ public class DrawPanel extends JPanel{
         this.isFill=isFill;
         drainTimer.stop();
     }
+    private void loadImages() {
 
+        try {
 
+            liquidImg = ImageIO.read(new File("./resources/liquid_texture.jpg"));
 
-/*    public void  startFill(boolean isFill){
-        fillTimer = new Timer(40, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                performFill();
-            }
-        });
-        fillTimer.start();
-    }*/
+        } catch (IOException ex) {
+
+            JOptionPane.showMessageDialog(this,"Could not load images", "Error", JOptionPane.ERROR_MESSAGE);
+            System.exit(1);
+        }
+    }
+
 
     void drawFlask(Graphics g) {
 
         Graphics2D g2d = (Graphics2D) g;
 
-        g2d.drawLine(startX, startY, startX, startY + mouthHeight);
-        g2d.drawLine(startX + mouthWidth, startY, startX + mouthWidth, startY + mouthHeight);
-        g2d.drawLine(startX, startY + mouthHeight, startX - mouthWidth * 2, startY + mouthHeight + bodyHeight);
-        g2d.drawLine(startX + mouthWidth, startY + mouthHeight, startX + mouthWidth * 3, startY + mouthHeight + bodyHeight);
-        g2d.drawLine(startX - mouthWidth * 2, startY + mouthHeight + bodyHeight, startX + mouthWidth * 3, startY + mouthHeight + bodyHeight);
+        int fP3X=cl.getP3(0);
+        int fP3Y=cl.getP3(1);
+        int fP4X=cl.getP4(0);
+        int fP4Y=cl.getP4(1);
+
+        int fP2Y=fP3Y-bodyHeight;
+        int fP2X=fP3X+bodyHeight/2;
+
+        int fP5Y=fP4Y-bodyHeight;
+        int fP5X=fP4X-bodyHeight/2;
+
+        int fP1X=fP2X;
+        int fP1Y=fP2Y-mouthHeight;
+
+        int fP6X=fP5X;
+        int fP6Y=fP5Y-mouthHeight;
+
+        BasicStroke bStroke1 = new BasicStroke(7, BasicStroke.CAP_ROUND,BasicStroke.CAP_ROUND);
+
+        g2d.setStroke(bStroke1);
+
+        g2d.drawLine(fP3X-3,fP3Y+3,fP4X+3,fP4Y+3);
+        g2d.drawLine(fP3X-3,fP3Y,fP2X-3,fP2Y);
+        g2d.drawLine(fP4X+3,fP4Y,fP5X+3,fP5Y);
+        g2d.drawLine(fP2X-4,fP2Y,fP1X-4,fP1Y-4);
+        g2d.drawLine(fP5X+3,fP5Y,fP6X+3,fP6Y-4);
     }
 
 
@@ -98,10 +117,17 @@ public class DrawPanel extends JPanel{
             liquidShape.lineTo(xPoints[index], yPoints[index]);
         }
         liquidShape.closePath();
+
+        BasicStroke bStroke2 = new BasicStroke(2, BasicStroke.CAP_ROUND,BasicStroke.CAP_ROUND);
+        g2d.setStroke(bStroke2);
+
         g2d.draw(liquidShape);
         Toolkit.getDefaultToolkit().sync();
 
-        g2d.setColor(new Color(34, 32, 166));
+        liquidTexture = new TexturePaint(liquidImg, new Rectangle(0, 0, 250, 500));
+
+        //g2d.setColor(new Color(34, 32, 166));
+        g2d.setPaint(liquidTexture);
         g2d.fill(liquidShape);
 
         g.dispose();
@@ -110,8 +136,10 @@ public class DrawPanel extends JPanel{
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        //drawFlask(g);
+
+        drawFlask(g);
         drawLiquid(g);
+
     }
 
     public void performFill(){
@@ -130,17 +158,17 @@ public class DrawPanel extends JPanel{
         int p6y = cl.getP6(1);
 
         int liquidHeight = p3y - p1y;
-        int bodyHeight = p3y - p2y;
+        //int bodyHeight = p3y - p2y;
 
         int tempAngleRate = 1;
 
         liquidFillRate = 2;
 
-        if (liquidHeight > bodyHeight + mouthHeight) {
+        if (liquidHeight > bodyHeight+mouthHeight) {
             liquidFillRate = 0;
         }
 
-            if (cl.getP2(0) < cl.getP5(0) - mouthWidth) {
+            if (liquidHeight < bodyHeight) {
                 cl.setP1(p1x + tempAngleRate, p1y - liquidFillRate);
                 cl.setP2(p2x + tempAngleRate, p2y - liquidFillRate);
                 cl.setP5(p5x - tempAngleRate, p5y - liquidFillRate);
@@ -169,7 +197,7 @@ public class DrawPanel extends JPanel{
         int p6y = cl.getP6(1);
 
         int liquidHeight = p3y - p1y;
-        int bodyHeight = p3y - p2y;
+        //int bodyHeight = p3y - p2y;
 
         int tempAngleRate = 1;
 
