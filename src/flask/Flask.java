@@ -1,4 +1,4 @@
-import java.awt.*;
+package flask;
 
 public class Flask extends Container {
 
@@ -7,7 +7,6 @@ public class Flask extends Container {
 
     private int mouthHeight;
     private int bodyHeight;
-    private int mouthWidth;
 
     private int baseStartPointX;
     private int baseStartPointY;
@@ -27,16 +26,8 @@ public class Flask extends Container {
         return flaskWidth;
     }
 
-    public int getMouthHeight() {
-        return mouthHeight;
-    }
-
     public int getBodyHeight() {
         return bodyHeight;
-    }
-
-    public int getMouthWidth() {
-        return mouthWidth;
     }
 
     public int getBaseStartPointX() {
@@ -47,13 +38,12 @@ public class Flask extends Container {
         return baseStartPointY;
     }
 
-    public void deriveDimensions(){
+    private void deriveDimensions(){
         this.mouthHeight=flaskHeight*3/4;
         this.bodyHeight=flaskHeight/3;
-        this.mouthWidth=flaskWidth/6;
     }
 
-    public void setFlask() {
+    private void setFlask() {
 
         setPoint(3,baseStartPointX,baseStartPointY);
         setPoint(4,baseStartPointX+flaskWidth,baseStartPointY);

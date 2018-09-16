@@ -1,3 +1,5 @@
+package cordinate.point;
+
 public interface PointSuper {
 
     int getCordX();

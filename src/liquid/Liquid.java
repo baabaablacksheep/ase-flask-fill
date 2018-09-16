@@ -1,4 +1,9 @@
-public class Liquid extends Container{
+package liquid;
+
+import flask.Container;
+import flask.Flask;
+
+public class Liquid extends Container {
 
     public Liquid(Flask flask) {
 

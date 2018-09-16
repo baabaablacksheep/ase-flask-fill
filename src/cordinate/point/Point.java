@@ -1,3 +1,5 @@
+package cordinate.point;
+
 public class Point implements PointSuper {
 
     private int cordX;
