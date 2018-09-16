@@ -77,15 +77,15 @@ public class DrawPanel extends JPanel{
         g2d.setStroke(bStroke1);
 
         //Draw Bottom Line
-        g2d.drawLine(flask.p3.getCordX(),flask.p3.getCordY(),flask.p4.getCordX(),flask.p4.getCordY());
+        g2d.drawLine(flask.p3.getCordX()-3,flask.p3.getCordY()+3,flask.p4.getCordX()+3,flask.p4.getCordY()+3);
 
         //Draw 2 side lines of the body
-        g2d.drawLine(flask.p3.getCordX(),flask.p3.getCordY(),flask.p2.getCordX(),flask.p2.getCordY());
-        g2d.drawLine(flask.p4.getCordX(),flask.p4.getCordY(),flask.p5.getCordX(),flask.p5.getCordY());
+        g2d.drawLine(flask.p3.getCordX()-4,flask.p3.getCordY()+3,flask.p2.getCordX()-3,flask.p2.getCordY()-3);
+        g2d.drawLine(flask.p4.getCordX()+4,flask.p4.getCordY()+3,flask.p5.getCordX()+3,flask.p5.getCordY()-3);
 
         //Draw 2 side lines of the mouth
-        g2d.drawLine(flask.p2.getCordX(),flask.p2.getCordY(),flask.p1.getCordX(),flask.p1.getCordY());
-        g2d.drawLine(flask.p5.getCordX(),flask.p5.getCordY(),flask.p6.getCordX(),flask.p6.getCordY());
+        g2d.drawLine(flask.p2.getCordX()-4,flask.p2.getCordY()-4,flask.p1.getCordX()-4,flask.p1.getCordY()-4);
+        g2d.drawLine(flask.p5.getCordX()+3,flask.p5.getCordY()-3,flask.p6.getCordX()+3,flask.p6.getCordY()-3);
 
     }
 
