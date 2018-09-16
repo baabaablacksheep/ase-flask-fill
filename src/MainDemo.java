@@ -1,5 +1,5 @@
-public class Demo {
+public class MainDemo {
     public static void main(String[] args) {
-        new Panels();
+        Panels.getPanel();
     }
 }

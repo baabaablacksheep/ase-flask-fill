@@ -6,15 +6,18 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class Panels implements ActionListener {
+
     JFrame window= new JFrame("Multiple Panels");
-    DrawPanel panel_01=new DrawPanel();
+    DrawPanel panel_01= new DrawPanel();
     JPanel panel_02=new JPanel();
     JButton fillButton =new JButton("Fill");
     JButton drainButton=new JButton("Drain");
-    JLabel infoTextFilled=new JLabel("Container Filled!");
-    JLabel infoTextDrained=new JLabel("Container Emptied!");
+    JLabel infoTextFilled=new JLabel("ContainerSuper Filled!");
+    JLabel infoTextDrained=new JLabel("ContainerSuper Emptied!");
 
-    Panels(){
+    private static Panels panelObj;
+
+    private Panels(){
         panel_01.setBackground(Color.CYAN);
         panel_02.setBackground(Color.DARK_GRAY);
 
@@ -26,6 +29,7 @@ public class Panels implements ActionListener {
 
         window.add(panel_01,BorderLayout.CENTER);
         window.add(panel_02,BorderLayout.PAGE_END);
+
 
         fillButton.addMouseListener(new MouseListener() {
             @Override
@@ -86,6 +90,19 @@ public class Panels implements ActionListener {
         window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
         window.setVisible(true);
     }
+
+    public static Panels getPanel(){
+
+        if (panelObj == null) {
+            synchronized (Panels.class) {
+                if (panelObj == null) {
+                    panelObj = new Panels();//instance will be created at request time
+                }
+            }
+        }
+        return panelObj;
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
