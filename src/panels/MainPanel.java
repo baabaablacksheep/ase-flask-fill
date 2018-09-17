@@ -18,7 +18,7 @@ public class MainPanel {
     private static MainPanel panelObj;
 
     private MainPanel(){
-        panel_01.setBackground(Color.decode("#8ba691"));
+        panel_01.setBackground(Color.decode("#cbccc6"));
         panel_02.setBackground(Color.decode("#273c50"));
 
         panel_02.add(drainButton);
@@ -93,8 +93,12 @@ public class MainPanel {
     class CustomButton extends JButton implements MouseListener{
         Font defaultFont = new Font("Tahoma",Font.PLAIN,30);
         Color textColor = Color.decode("#ffffff");
-        Color backgroundColor = Color.decode("#428bca");
-        Color hoverColor = Color.decode("#5bc0de");
+        Color fillBackgroundColor = Color.decode("#428bca");
+        Color drainBackgroundColor = Color.decode("#b62a25");
+        Color backgroundColor;
+        Color fillHoverColor = Color.decode("#5bc0de");
+        Color drainHoverColor = Color.decode("#ec3c3c");
+        Color hoverColor;
 
         public CustomButton(String s) {
             s = s.toUpperCase();
@@ -102,6 +106,13 @@ public class MainPanel {
             this.setText(s);
             this.setBorder(null);
             this.setForeground(textColor);
+            if(s.equals("FILL")){
+                backgroundColor = fillBackgroundColor;
+                hoverColor =fillHoverColor;
+            } else {
+                backgroundColor = drainBackgroundColor;
+                hoverColor = drainHoverColor;
+            }
             this.setBackground(backgroundColor);
             this.setFont(defaultFont);
             this.setOpaque(true);
