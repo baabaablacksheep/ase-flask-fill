@@ -9,7 +9,7 @@ import java.net.URL;
 
 public class MainPanel {
 
-    private JFrame window= new JFrame("Multiple panels.MainPanel");
+    private JFrame window= new JFrame("Erlenmeyer flask");
     CenterPanel panel_01= new CenterPanel();
     JPanel panel_02=new JPanel();
     JButton fillButton =new CustomButton("Fill");
