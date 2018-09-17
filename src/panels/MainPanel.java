@@ -1,9 +1,11 @@
 package panels;
 
-        import javax.swing.*;
-        import java.awt.*;
-        import java.awt.event.MouseEvent;
-        import java.awt.event.MouseListener;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class MainPanel {
 
@@ -16,8 +18,8 @@ public class MainPanel {
     private static MainPanel panelObj;
 
     private MainPanel(){
-        panel_01.setBackground(Color.LIGHT_GRAY);
-        panel_02.setBackground(Color.DARK_GRAY);
+        panel_01.setBackground(Color.decode("#8ba691"));
+        panel_02.setBackground(Color.decode("#273c50"));
 
         panel_02.add(drainButton);
         panel_02.add(Box.createRigidArea(new Dimension(100,0)));

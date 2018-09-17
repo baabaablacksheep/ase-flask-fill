@@ -20,7 +20,7 @@ public class LiquidTexture {
 
         try {
 
-            liquidImg = ImageIO.read(new File("./resources/liquid_texture.jpg"));
+            liquidImg = ImageIO.read(new File("./resources/water_texture.jpg"));
 
         } catch (IOException ex) {
 
