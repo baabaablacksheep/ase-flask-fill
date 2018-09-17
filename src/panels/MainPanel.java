@@ -70,9 +70,9 @@ public class MainPanel {
         });
 
         window.setSize(600,800);
+        window.setResizable(false);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setVisible(true);
-    }
+        window.setVisible(true);    }
 
     public static MainPanel getPanel(){
 
